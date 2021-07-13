@@ -23,18 +23,18 @@ const Selects = (props) => {
         { name: 'Spain', code: 'ES' },
         { name: 'United States', code: 'US' }
     ];
-
+    console.log('var ent ', process.env.REACT_APP_URL)
     useEffect(() => {
         console.log('DidMount')
         const options = {
             method: 'GET',
-            url: 'https://amazon24.p.rapidapi.com/api/category',
-            params: { country: 'US' },
+            url: `${process.env.REACT_APP_URL}/category`,
+            params: {country: 'US'},
             headers: {
-                'x-rapidapi-key': '8997fb3f4cmshd20a00aa73940f6p14b484jsne3d5a4dbd374',
-                'x-rapidapi-host': 'amazon24.p.rapidapi.com'
+              'x-rapidapi-key': `${process.env.REACT_APP_KEY}`,
+              'x-rapidapi-host': `${process.env.REACT_APP_HOST}`
             }
-        };
+          };
 
         axios.request(options).then(function (response) {
             console.log('llamado en useEffect', response.data);

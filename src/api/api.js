@@ -2,11 +2,11 @@ import axios from "axios";
 
 const options = {
   method: 'GET',
-  url: 'https://amazon24.p.rapidapi.com/api/category',
+  url: `${process.env.REACT_APP_URL}/category`,
   params: {country: 'US'},
   headers: {
-    'x-rapidapi-key': '8997fb3f4cmshd20a00aa73940f6p14b484jsne3d5a4dbd374',
-    'x-rapidapi-host': 'amazon24.p.rapidapi.com'
+    'x-rapidapi-key': `${process.env.REACT_APP_KEY}`,
+    'x-rapidapi-host': `${process.env.REACT_APP_HOST}`
   }
 };
 
